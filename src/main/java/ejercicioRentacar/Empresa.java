@@ -48,23 +48,27 @@ public class Empresa {
     
     
     
-    public Cliente buscarCliente(String nif){
+    public Cliente buscarClientePorNif(String nif){
         
         return this.cc.buscarCliente(nif);
         
     }
     
-    public Vehiculo buscarVehiculo(String bastidor){
+      //Devolver una lista con todos Alquileres de un vehiculo, usando su bastidor.
+    public Vehiculo buscarVehiculoPorBastidor(String bastidor){
         
-         return this.cv.buscarVehiculo(bastidor);
+         return this.cv.buscarVehiculoPorBastidor(bastidor);
     }
     
     
-    
+      //Devolver una lista con todos Alquileres de un vehiculo, usando su bastidor.
      public Alquiler buscarAlquilerPorNif(String nif) {
 
          return this.ca.buscarAlquilerPorNif(nif);
 
     }
+     
+     
+   
     
 }

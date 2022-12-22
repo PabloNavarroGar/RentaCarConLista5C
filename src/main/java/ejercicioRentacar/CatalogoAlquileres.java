@@ -44,4 +44,11 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         return aux;
 
     }
+    
+     //añadir un alquiler
+    public void anadirAlquiler(Alquiler c) {
+        //Si hay hueco, se inserta en el hueco
+       this.lista.add(c);
+
+    }
 }

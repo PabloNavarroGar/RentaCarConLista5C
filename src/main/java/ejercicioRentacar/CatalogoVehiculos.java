@@ -23,7 +23,7 @@ public class CatalogoVehiculos extends Catalogo<Vehiculo> {
     }
 
     //Este elemento va en esta clase aparte
-    public Vehiculo buscarVehiculo(String bastidor) {
+    public Vehiculo buscarVehiculoPorBastidor(String bastidor) {
 
         Vehiculo aux = new Vehiculo();
 
