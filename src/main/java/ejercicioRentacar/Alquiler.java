@@ -5,6 +5,7 @@
 package ejercicioRentacar;
 
 import java.time.LocalDate;
+import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
 
 /**
@@ -19,7 +20,7 @@ public class Alquiler {
     private LocalDate fechaInicio;
     private int duracion;
    
-    private String alquilerID2;
+  
     private static int contador=0;
     public Alquiler(Cliente cliente, Vehiculo vehiculo, LocalDate fechaInicio, int duracion) {
         this.cliente = cliente;
@@ -30,17 +31,18 @@ public class Alquiler {
         this.alquierID=contador;
     }
 
-    public Alquiler(String AlquilerID, Cliente cliente, Vehiculo vehiculo, int duracion) {
-        this.alquilerID2 = RandomStringUtils.random(4);
-        this.cliente = cliente;
-        this.vehiculo = vehiculo;
+    public Alquiler() {
+       
+        this.cliente = new Cliente();
+        this.vehiculo = new Vehiculo();
         this.fechaInicio = LocalDate.now();
-        this.duracion = duracion;
+        this.duracion = numeroEnteroRandom(1, 100);
+        contador++;
+        this.alquierID = contador;
     }
     
 
-    public Alquiler() {
-    }
+
     
     public int getAlquierID() {
         return alquierID;
@@ -117,5 +119,11 @@ public class Alquiler {
         return this.alquierID == other.alquierID;
     }
             
-    
+     public static int numeroEnteroRandom(int minimo, int maximo) {
+
+        Random random = new Random();
+        int numero = random.nextInt(maximo - minimo + 1) + minimo;
+        return numero;
+    }
+
 }

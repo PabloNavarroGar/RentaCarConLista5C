@@ -31,6 +31,7 @@ public class CatalogoVehiculos extends Catalogo<Vehiculo> {
         int posicion = this.buscarElemento(aux);
 
         return (posicion >= 0) ? this.lista.get(posicion) : null;
+        //Si es mayor o igual a cero devuelve el cliente entero
     }
 
     

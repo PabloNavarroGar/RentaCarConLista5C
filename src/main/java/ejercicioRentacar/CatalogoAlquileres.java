@@ -4,6 +4,8 @@
  */
 package ejercicioRentacar;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author pablo
@@ -14,9 +16,6 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
 
         super(tamanio);//llama al constructor de la clase padre, que es catalogo
 
-        for (int i = 0; i < tamanio; i++) {
-            this.lista.add(new Alquiler());//Para que cree el catalago de alquiler
-        }
     }
 
     //Este elemento va en esta clase aparte
@@ -30,25 +29,60 @@ public class CatalogoAlquileres extends Catalogo<Alquiler> {
         return (posicion >= 0) ? this.lista.get(posicion) : null;
     }
 
-    public Alquiler buscarAlquilerPorNif(String nif) {
+    public boolean buscarAlquilerPorNif(String nif) {
+        boolean resultado = false;
+        for (int i = 0; i < lista.size(); i++) {
 
-        Alquiler aux = new Alquiler();
-        //For eeach que le paso la lista, y el objeto Alquier.
-        //Si el nif equivale al cliente con sunif, me devuleve el cliente
-        for (Alquiler a : this.lista) {
-            if (nif.equals(a.getCliente().getNif())) {
-                return a;
+            if (lista.get(i).getCliente().getNif().equals(nif)) {
+                resultado = true;
+
             }
         }
 
-        return aux;
+        return resultado;
 
+    }
+
+    public boolean buscarVehiculoPorBastidor(String bastidor) {
+
+        boolean resultado = false;
+        for (int i = 0; i < lista.size(); i++) {
+
+            if (lista.get(i).getVehiculo().getBastidor().equals(bastidor)) {
+                resultado = true;
+
+            }
+        }
+        return resultado;
+
+    }
+    //Añadir alquiler de vehiculos al Array.
+    public ArrayList<Alquiler> alquiVeh(String bastidor){
+        ArrayList <Alquiler> listaNueva = new ArrayList<>();
+        
+        for (int i = 0; i < this.lista.size(); i++) {
+            
+            if(lista.get(i).getVehiculo().getBastidor().equals(bastidor)){
+                
+                listaNueva.add(lista.get(i));
+            }
+                
+        }
+        return listaNueva;
     }
     
-     //añadir un alquiler
-    public void anadirAlquiler(Alquiler c) {
-        //Si hay hueco, se inserta en el hueco
-       this.lista.add(c);
-
+    public ArrayList<Alquiler> alquiCli(String nif){
+        ArrayList <Alquiler> listaNueva = new ArrayList<>();
+        
+        for (int i = 0; i < this.lista.size(); i++) {
+            
+            if(lista.get(i).getCliente().getNif().equals(nif)){
+                
+                listaNueva.add(lista.get(i));
+            }
+                
+        }
+        return listaNueva;
     }
+
 }
