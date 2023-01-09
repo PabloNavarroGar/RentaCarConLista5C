@@ -11,6 +11,8 @@ import java.util.List;
  *
  * @author pablo
  */
+//Catalogo general, el cual es intermediario entre los 3 tipos de catalogo, es un ArrayList,
+
 public class Catalogo<T> {
     //Esto sirve para indicar cualquier tipo de objeto
     //esto es una clase genérica
@@ -18,7 +20,7 @@ public class Catalogo<T> {
     
     
      public Catalogo(int tamanio) {
-
+         //Creo un constructor, el cual tiene un tamaño.
         tamanio = Math.abs(tamanio);
         this.lista = new ArrayList<>(tamanio); //Se puede poner el tamaño
         //Todo add, requiere el tamaño 
@@ -44,12 +46,13 @@ public class Catalogo<T> {
     }
 
      public int getNumeroElementos() {
-        return this.lista.size();//tamanio de la lista
+        return this.lista.size();//tamanio de la lista,uso de la clase del Array.
     }
      
      
      public int buscarElemento(T elemento) {
-        //se le para el objeto como parametro
+         //T es el array list del Objeto
+        //Se le pasa el elemento como objeto, que esta ne el parametro
         if (elemento != null) {
             for (int i = 0; i < this.lista.size(); i++) {
                 if (this.lista.get(i) != null && elemento.equals(this.lista.get(i))) {
@@ -75,7 +78,7 @@ public class Catalogo<T> {
     }
    
    public void anadirElemento(T elemento) {
-        this.lista.add(elemento);//Solo es una linea de comando xD
+        this.lista.add(elemento);//Solo es una linea de comando.
 
     }
    

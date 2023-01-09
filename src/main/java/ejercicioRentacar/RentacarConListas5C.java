@@ -50,9 +50,9 @@ public class RentacarConListas5C {
                     break;
                 case "2":
 
-                    Vehiculo auxVe = introducirTecladoVehiculo();
-                    System.out.println("-------------------");
-                    System.out.println(auxVe);
+//                    Vehiculo auxVe = introducirTecladoVehiculo();
+//                    System.out.println("-------------------");
+//                    System.out.println(auxVe);
                     break;
                 case "3":
 
@@ -138,7 +138,7 @@ public class RentacarConListas5C {
                         ----------------------------------------
                          [2]Dar de alta un Vehiculo(registar)
                         ----------------------------------------
-                         [3]Relizar Alquiler(Introduccion de datos) 
+                         [3]Realizar Alquiler(Introduccion de datos) 
                         ----------------------------------------      
                        
                         ----------------------------------------
@@ -231,6 +231,7 @@ public class RentacarConListas5C {
         cliente = new Cliente(nombreCliente, apellidoCliente, nifCliente);
 
         //Devolvemos el tipo serie
+        
         return cliente;
     }
 
@@ -261,5 +262,7 @@ public class RentacarConListas5C {
 
         return numero;
     }
+    
+   
 
 }

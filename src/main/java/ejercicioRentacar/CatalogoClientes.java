@@ -11,9 +11,9 @@ package ejercicioRentacar;
  * @author pablo
  */
 public class CatalogoClientes extends Catalogo<Cliente> {
-    
+    //Ponemos el extends del Catalogo con el objeto Cliente
      public CatalogoClientes(int tamanio) {
-
+         
         super(tamanio);//llama al constructor de la clase padre, que es catalogo
         
          for (int i = 0; i < tamanio; i++) {

@@ -46,7 +46,7 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo{" + "bastidor=" + bastidor + ", matricula=" + matricula + ", color=" + color2 + ", modelo=" + modelo2 + ", disponible=" + disponible + ", tarifa=" + tarifa + '}';
+        return "Vehiculo{" + "bastidor=" + bastidor + ", matricula=" + matricula + ", color=" + color + ", modelo=" + modelo + ", disponible=" + disponible + ", tarifa=" + tarifa + '}';
     }
 
     //Getters and Setters
@@ -82,13 +82,22 @@ public class Vehiculo {
         this.tarifa = tarifa;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+    
+
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 83 * hash + Objects.hashCode(this.bastidor);
         hash = 83 * hash + Objects.hashCode(this.matricula);
-        hash = 83 * hash + Objects.hashCode(this.color2);
-        hash = 83 * hash + Objects.hashCode(this.modelo2);
+        hash = 83 * hash + Objects.hashCode(this.color);
+        hash = 83 * hash + Objects.hashCode(this.modelo);
         hash = 83 * hash + (this.disponible ? 1 : 0);
         hash = 83 * hash + (int) (Double.doubleToLongBits(this.tarifa) ^ (Double.doubleToLongBits(this.tarifa) >>> 32));
         return hash;
@@ -125,4 +134,5 @@ public class Vehiculo {
         this.modelo2 = modelo2;
     }
 
+    
 }

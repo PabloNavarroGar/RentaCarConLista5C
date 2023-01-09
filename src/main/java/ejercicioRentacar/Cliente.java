@@ -13,20 +13,22 @@ import org.apache.commons.lang3.RandomStringUtils;
  */
 public class Cliente {
 
-    private String nombre;
+    private NombreCliente nombre;
     private String apellidos;
     private String nif;
+    private NombreCliente nombreAleatorio;
+    private String nombre2;
     private static int contador = 0;
-
+    
     public Cliente() {
-        this.nombre = RandomStringUtils.randomAlphabetic(3);
-        this.apellidos = RandomStringUtils.randomAlphabetic(3);;
+        this.nombre = NombreCliente.getNombreAleatorio();
+        this.apellidos = RandomStringUtils.randomAlphabetic(3);
         contador++;
         this.nif = String.valueOf(contador);
     }
-
+//    Constructor el cual se introduce los datos que le pasemos, es el que usamos por teclado
     public Cliente(String nombre, String apellidos, String nif) {
-        this.nombre = nombre;
+        this.nombre2 = nombre;
         this.apellidos = apellidos;
 
         this.nif = nif;
@@ -36,6 +38,10 @@ public class Cliente {
    
     
     
+
+    public NombreCliente getNombre() {
+        return nombre;
+    }
 
 //    private static String generarNIF() {
 //        //Declaramos los char de las letras
@@ -60,13 +66,23 @@ public class Cliente {
 //        return nif + letras[numeroLetra];
     //}
     //Getter y Setters
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+//    public String getNombre() {
+//        return nombre;
+//    }
+//
+//    public void setNombre(String nombre) {
+//        this.nombre = nombre;
+//    }
+    public void setNombre(NombreCliente nombre) {
         this.nombre = nombre;
     }
+
+    public NombreCliente getNombreAleatorio() {
+        return nombreAleatorio;
+    }
+
+   
+    
 
     public String getApellidos() {
         return apellidos;
@@ -80,10 +96,21 @@ public class Cliente {
         return nif;
     }
 
+    public String getNombre2() {
+        return nombre2;
+    }
+
+    public void setNombre2(String nombre2) {
+        this.nombre2 = nombre2;
+    }
+
+    
     @Override
     public String toString() {
-        return "Cliente{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", nif=" + nif + '}';
+        return "Cliente{" + "nombre=" + nombre +  ", apellidos=" + apellidos + ", nif=" + nif + '}';
     }
+    
+    
 
     @Override
     public int hashCode() {
@@ -111,4 +138,5 @@ public class Cliente {
         return Objects.equals(this.nif, other.nif);
     }
 
+        
 }

@@ -12,6 +12,7 @@ import java.util.Random;
  */
 public enum Color {
     ROJO, AZUL, AMARILLO;
+    //Metodo para escoger entre los 3 colore que hay , va con el objeto de Vehiculo
     public static Color getAleatorio(){
         Random r = new Random();
         //Generá un array de todos los colores del enum. 

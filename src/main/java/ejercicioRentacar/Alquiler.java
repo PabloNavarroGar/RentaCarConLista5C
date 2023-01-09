@@ -30,7 +30,7 @@ public class Alquiler {
         contador++;
         this.alquierID=contador;
     }
-
+    //Creo un constructor vacio, para cuando use en el catalogodeAquilieres
     public Alquiler() {
        
         this.cliente = new Cliente();
